@@ -87,3 +87,4 @@ export const courseService = {
     return response.data;
   },
 };
+

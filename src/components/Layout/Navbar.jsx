@@ -240,3 +240,4 @@ className="flex items-center space-x-3 px-3 py-3 rounded-lg transition-colors"
 };
 
 export default Navbar;
+

@@ -284,3 +284,4 @@ const DepartmentDashboard = ({ userRole, departmentId }) => {
 };
 
 export default DepartmentDashboard;
+

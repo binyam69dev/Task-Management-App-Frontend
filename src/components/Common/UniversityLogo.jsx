@@ -22,3 +22,4 @@ const UniversityLogo = ({ className = "h-10 w-auto" }) => {
 };
 
 export default UniversityLogo;
+

@@ -50,3 +50,4 @@ export const academicService = {
     return response.data;
   },
 };
+

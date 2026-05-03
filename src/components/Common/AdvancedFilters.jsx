@@ -98,3 +98,4 @@ const AdvancedFilters = ({ onFilterChange }) => {
 };
 
 export default AdvancedFilters;
+

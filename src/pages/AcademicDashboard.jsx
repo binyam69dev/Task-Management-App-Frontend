@@ -41,7 +41,7 @@ const AcademicDashboard = () => {
         instructors: instructors?.data || []
       });
     } catch (err) {
-      console.error('Error fetching academic data:', err);
+      
       setError('Failed to load academic data');
     } finally {
       setLoading(false);

@@ -265,3 +265,4 @@ const UniversityRegistration = () => {
 };
 
 export default UniversityRegistration;
+

@@ -38,3 +38,4 @@ export const GradeScale = {
   'D': { min: 60, max: 69, points: 1.0 },
   F: { min: 0, max: 59, points: 0.0 },
 };
+
