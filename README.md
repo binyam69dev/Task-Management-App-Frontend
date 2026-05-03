@@ -1,16 +1,121 @@
-# React + Vite
+# 🚀 Task Management App – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive task management application built with **React** and  **Tailwind CSS** , featuring real-time updates, authentication integration, and a clean UI/UX.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+* 🔐 User authentication (Login/Register)
+* 📋 Create, update, delete tasks
+* ⚡ Real-time UI updates
+* 📱 Fully responsive design
+* 🎨 Modern UI with Tailwind CSS
+* 🔍 Task filtering & status tracking
+* 🌙 Clean and scalable component structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React** – UI library
+* **Tailwind CSS** – Styling
+* **Axios / Fetch API** – API communication
+* **React Router** – Routing
+* **Context API / Zustand (optional)** – State management
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│── components/        # Reusable UI components
+│── pages/             # Page-level components
+│── hooks/             # Custom hooks
+│── services/          # API calls
+│── store/             # State management
+│── utils/             # Helper functions
+│── App.jsx
+│── main.jsx
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/task-manager-frontend.git
+cd task-manager-frontend
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a `.env` file:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔗 API Integration
+
+This frontend communicates with the backend REST API:
+
+* `POST /auth/login`
+* `POST /auth/register`
+* `GET /tasks`
+* `POST /tasks`
+* `PUT /tasks/:id`
+* `DELETE /tasks/:id`
+
+---
+
+## 🧠 Key Concepts
+
+* Component-based architecture
+* Separation of concerns (UI vs API logic)
+* Reusable UI components
+* Optimistic UI updates for better UX
+
+---
+
+## 🚀 Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 📸 Screenshots (Optional)
+
+*Add screenshots or GIFs here*
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, open an issue first.
+
+---
+
+
+## 👨‍💻 Author
+
+Your Name – @binyam69dev
