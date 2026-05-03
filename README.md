@@ -47,7 +47,7 @@ src/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/task-manager-frontend.git
+git clone https://github.com/binyam69dev/task-manager-frontend.git
 cd task-manager-frontend
 ```
 
