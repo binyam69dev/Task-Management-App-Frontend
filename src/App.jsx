@@ -1,20 +1,20 @@
 ﻿import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './components/Layout/Layout';
-import PrivateRoute from './components/Common/PrivateRoute';
-import Footer from './components/Common/Footer';
+import Layout from './shared/layout/Layout.jsx'
+import PrivateRoutes from  "./features/auth/components/PrivateRoute.jsx"
+import Footer from './shared/components/Footer.jsx';
 import LandingPage from './pages/LandingPage';
-import AboutUs from './pages/AboutUs';
+import AboutUs from './pages/AboutUs.jsx';
 import FeaturesPage from './pages/FeaturesPage';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './features/auth/pages/Login.jsx';
+import Register from './features/auth/pages/Register.jsx';
 import Dashboard from './pages/Dashboard';
-import Tasks from './pages/Tasks';
-import CreateTask from './pages/CreateTask';
-import EditTask from './pages/EditTask';
-import Profile from './pages/Profile';
-import Settings from './pages/Settings';
-import AcademicDashboard from './pages/AcademicDashboard';
+import Tasks from './features/tasks/pages/Tasks.jsx';
+import CreateTask from './features/tasks/pages/CreateTask.jsx';
+import EditTask from './features/tasks/pages/EditTask.jsx';
+import Settings from './pages/Settings.jsx';
+import AcademicDashboard from './pages/AcademicDashboard.jsx';
+import KanbanBoard from './features/tasks/components/KanbanBoard.jsx';
 
 function App() {
   return (
@@ -29,12 +29,13 @@ function App() {
       <Route path="/features" element={<><Layout /><FeaturesPage /><Footer /></>} />
       
       {/* Protected Routes with Layout */}
-      <Route path="/dashboard" element={<PrivateRoute><Layout /><Dashboard /></PrivateRoute>} />
-      <Route path="/tasks" element={<PrivateRoute><Layout /><Tasks /></PrivateRoute>} />
-      <Route path="/tasks/create" element={<PrivateRoute><Layout /><CreateTask /></PrivateRoute>} />
-      <Route path="/tasks/:id/edit" element={<PrivateRoute><Layout /><EditTask /></PrivateRoute>} />
-      <Route path="/profile" element={<PrivateRoute><Layout />`n        <Route path="/academics" element={<PrivateRoute><Layout /><AcademicDashboard /></PrivateRoute>} /><Profile /></PrivateRoute>} />
-      <Route path="/settings" element={<PrivateRoute><Layout /><Settings /></PrivateRoute>} />
+      <Route path="/dashboard" element={<PrivateRoutes><Layout /><Dashboard /></PrivateRoutes>} />
+      <Route path="/tasks" element={<PrivateRoutes><Layout /><Tasks /></PrivateRoutes>} />
+      <Route path="/tasks/kanban" element={<PrivateRoutes><Layout /><KanbanBoard /></PrivateRoutes>} />
+      <Route path="/tasks/create" element={<PrivateRoutes><Layout /><CreateTask /></PrivateRoutes>} />
+      <Route path="/tasks/:id/edit" element={<PrivateRoutes><Layout /><EditTask /></PrivateRoutes>} />
+      <Route path="/academics" element={<PrivateRoutes><Layout /><AcademicDashboard /></PrivateRoutes>} />
+      <Route path="/settings" element={<PrivateRoutes><Layout /><Settings /></PrivateRoutes>} />
       
       {/* Catch all redirect */}
       <Route path="*" element={<Navigate to="/" replace />} />
@@ -43,5 +44,3 @@ function App() {
 }
 
 export default App;
-
-

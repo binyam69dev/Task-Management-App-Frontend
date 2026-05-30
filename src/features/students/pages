@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useAuth } from '../store/authContext';
+﻿import React, { useState } from 'react';
+import { useAuth } from '../features/auth/store/authContext';
 import { FiUser, FiMail } from 'react-icons/fi';
 
 const Profile = () => {

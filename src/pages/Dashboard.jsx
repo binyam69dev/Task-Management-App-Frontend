@@ -1,10 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
-import { useTasks, useTaskStats } from '../hooks/useTasks';
-import StatCard from '../components/Dashboard/StatCard';
-import TaskCard from '../components/Tasks/TaskCard';
-import TaskAnalytics from '../components/Dashboard/TaskAnalytics';
-import LoadingSpinner from '../components/Common/LoadingSpinner';
-import ExportTasks from '../components/Common/ExportTasks';
+import { useTasks, useTaskStats } from '../features/tasks/hooks/useTasks';
+import StatCard from '../features/dashboard/components/StatCard.jsx';
+import TaskCard from '../features/tasks/components/TaskCard.jsx';
+import TaskAnalytics from '../features/dashboard/components/TaskAnalytics.jsx';
+import LoadingSpinner from '../shared/components/LoadingSpinner.jsx';
+import ExportTasks from '../features/tasks/components/ExportTasks';
 import { FiCheckCircle, FiClock, FiAlertCircle, FiTrendingUp, FiBarChart2 } from 'react-icons/fi';
 
 const Dashboard = () => {

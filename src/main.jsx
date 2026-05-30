@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Toaster } from 'react-hot-toast'
-import App from './App'
-import { AuthProvider } from './store/authContext'
-import { ThemeProvider } from './store/ThemeProvider'
+import App from './App.jsx'
+import { ThemeProvider } from './store/ThemeProvider.jsx'
+import { AuthProvider } from './features/auth/store/authContext.jsx'
+import { SocketProvider } from './context/SocketContext.jsx'
 import './styles/globals.css'
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,21 +26,22 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
         <ThemeProvider>
           <AuthProvider>
-            <App />
-            <Toaster 
-              position="top-right"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  background: 'var(--toast-bg)',
-                  color: 'var(--toast-color)',
-                },
-              }}
-            />
+            <SocketProvider>
+              <App />
+              <Toaster 
+                position="top-right"
+                toastOptions={{
+                  duration: 3000,
+                  style: {
+                    background: 'var(--toast-bg)',
+                    color: 'var(--toast-color)',
+                  },
+                }}
+              />
+            </SocketProvider>
           </AuthProvider>
         </ThemeProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
 )
-

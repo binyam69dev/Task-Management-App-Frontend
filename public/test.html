@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Connection Test</title></head>
+<body>
+    <h2>Backend Connection Test</h2>
+    <button onclick="testHealth()">Test Health</button>
+    <button onclick="testLogin()">Test Login</button>
+    <pre id="result"></pre>
+    <script>
+        const result = document.getElementById('result');
+        
+        async function testHealth() {
+            result.textContent = 'Testing health...';
+            try {
+                const res = await fetch('http://localhost:5000/health');
+                const data = await res.json();
+                result.textContent = 'Health Check SUCCESS: ' + JSON.stringify(data, null, 2);
+            } catch(err) {
+                result.textContent = 'Health Check FAILED: ' + err.message;
+            }
+        }
+        
+        async function testLogin() {
+            result.textContent = 'Testing login...';
+            try {
+                const res = await fetch('http://localhost:5000/api/v1/auth/login', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        email: 'binyam369@gmail.com',
+                        password: 'binyam552'
+                    })
+                });
+                const data = await res.json();
+                result.textContent = 'Login Response: ' + JSON.stringify(data, null, 2);
+            } catch(err) {
+                result.textContent = 'Login FAILED: ' + err.message;
+            }
+        }
+    </script>
+</body>
+</html>

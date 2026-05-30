@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   FiUser, FiBook, FiAward, FiTrendingUp, FiCalendar, 
   FiClock, FiCheckCircle, FiBarChart2, FiUsers, FiLoader
 } from 'react-icons/fi';
 import { academicService } from '../services/academicService';
-import { useAuth } from '../features/auth/store/authContext.jsx';
+import { useAuth } from '../features/auth/store/authContext';
 
 const AcademicDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');

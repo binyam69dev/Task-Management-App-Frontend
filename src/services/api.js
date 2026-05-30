@@ -1,17 +1,20 @@
 ﻿import axios from 'axios';
-import toast from 'react-hot-toast';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/v1',
+  baseURL: 'http://localhost:5000/api/v1',
   timeout: 30000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
-// Request interceptor
+// Add token to requests if it exists
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
     if (token) {
-config.headers.Authorization = `Bearer ${token}`;    }
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
@@ -19,7 +22,7 @@ config.headers.Authorization = `Bearer ${token}`;    }
   }
 );
 
-// Response interceptor
+// Handle response errors
 API.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -27,11 +30,9 @@ API.interceptors.response.use(
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/login';
-      toast.error('Session expired. Please login again.');
     }
     return Promise.reject(error);
   }
 );
 
 export default API;
-
